@@ -23,7 +23,7 @@ namespace monior {
         QWidget* initSoftIrqMonitorWidget();  // 初始化软中断监控模块
         QWidget* initButtunWidget(const std::string& name);  // 初始化按钮模块
 
-        void updateData();  // 更新数据
+        //void updateData();  // 更新数据
 
     private slots:
         void clickCPUButtun();  // 点击CPU按钮

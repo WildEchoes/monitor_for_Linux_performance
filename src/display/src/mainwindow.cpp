@@ -36,7 +36,6 @@ namespace monior {
         QWidget* widget = new QWidget(this);
 
         // 初始化按钮模块
-        // m_stacked_meun = new QStackedLayout();
         m_stacked_meun->addWidget(initCPUMonitorWidget());
         m_stacked_meun->addWidget(initMemoryMonitorWidget());
         m_stacked_meun->addWidget(initNetMonitorWidget());
@@ -52,22 +51,26 @@ namespace monior {
 
     QWidget *MonitorWindow::initCPUMonitorWidget()
     {
-        return nullptr;
+        QWidget *widget = new QWidget(this);
+        return widget;
     }
 
     QWidget *MonitorWindow::initMemoryMonitorWidget()
     {
-        return nullptr;
+        QWidget *widget = new QWidget(this);
+        return widget;
     }
 
     QWidget *MonitorWindow::initNetMonitorWidget()
     {
-        return nullptr;
+        QWidget *widget = new QWidget(this);
+        return widget;
     }
 
     QWidget *MonitorWindow::initSoftIrqMonitorWidget()
     {
-        return nullptr;
+        QWidget *widget = new QWidget(this);
+        return widget;
     }
 
     QWidget *MonitorWindow::initButtunWidget(const std::string &name)

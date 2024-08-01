@@ -1,1 +1,1 @@
-docker build -t monitor -f base.dockerfile .
+docker build -t monitor --network host -f base.dockerfile .

@@ -1,13 +1,16 @@
 # Display
-project(display)
+project(Display)
 # 查找Qt库
 find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
 
 # 添加头文件路径
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # 添加源文件
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC_LIST)
+
+# 添加主文件
+set(SRC_LIST ${SRC_LIST} ${CMAKE_CURRENT_SOURCE_DIR}/src/main_display.cpp)
 
 add_executable(display ${SRC_LIST})
 
@@ -25,3 +28,8 @@ target_link_libraries(display
     Qt5::Widgets
     Qt5::Core
 )
+
+# 设置RPATH
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")

@@ -16,6 +16,7 @@ group="$(id -g -n)"
 gid="$(id -g)"
 
 echo "create docker"
+echo display: $display
 
 docker run -it -d \
 --name monitor \
@@ -29,5 +30,6 @@ docker run -it -d \
 -e XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
 -v ${MONITOR_HOME_DIR}:/work \
 -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
 --net host \
 monitor
