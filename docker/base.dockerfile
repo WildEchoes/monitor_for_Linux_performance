@@ -56,6 +56,11 @@ RUN apt-get install -y  \
     x11-apps \
     locales
 
+# 设置环境变量
+ENV LANG=zh_CN.UTF-8 \
+    LANGUAGE=zh_CN:zh \
+    LC_ALL=zh_CN.UTF-8
+
 # 安装protobuf
 COPY install/protobuf /tmp/install/protobuf
 RUN /tmp/install/protobuf/install_protobuf.sh
