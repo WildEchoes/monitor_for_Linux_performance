@@ -1,11 +1,12 @@
 #include "mainwindow.h"
 
 #include <QPushButton>
+#include <QDebug>
 
 namespace monior {
     MonitorWindow::MonitorWindow(QWidget *parent) 
     : QWidget(parent) 
-    , m_stacked_meun(new QStackedLayout(this))
+    , m_stacked_meun(new QStackedLayout())
     , m_monitorView(new QTableView(this))
     , m_cpuLoadView(new QTableView(this))
     , m_cpuStateView(new QTableView(this))
@@ -14,6 +15,7 @@ namespace monior {
     {
         // this->setWindowTitle("Monior For Linux");
         // this->setFixedSize(800, 600);
+        qDebug() << "MonitorWindow";
     }
 
     MonitorWindow::~MonitorWindow() {
@@ -41,11 +43,12 @@ namespace monior {
         m_stacked_meun->addWidget(initNetMonitorWidget());
         m_stacked_meun->addWidget(initSoftIrqMonitorWidget());
 
-        QGridLayout* layout = new QGridLayout(this);
+        QGridLayout* layout = new QGridLayout();  // 不要添加this
         layout->addWidget(initButtunWidget(name), 1, 0); // 添加按钮模块
         layout->addLayout(m_stacked_meun, 2, 0);  // 添加监控模块
         widget->setLayout(layout);  // 设置布局
 
+        qDebug() << "showAllWidget";
         return widget;
     }
 
@@ -87,7 +90,7 @@ namespace monior {
         softirq_button->setFont(font);
 
         // 设置布局
-        QVBoxLayout* layout = new QVBoxLayout(this);
+        QVBoxLayout* layout = new QVBoxLayout();
         layout->addWidget(cpu_button);
         layout->addWidget(memory_button);
         layout->addWidget(net_button);
