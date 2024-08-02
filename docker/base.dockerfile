@@ -52,7 +52,9 @@ RUN apt-get install -y  \
     libdbus-1-3 \
     libfontconfig1 \
     libxkbcommon0   \
-    libxkbcommon-x11-0
+    libxkbcommon-x11-0 \
+    x11-apps \
+    locales
 
 # 安装protobuf
 COPY install/protobuf /tmp/install/protobuf
