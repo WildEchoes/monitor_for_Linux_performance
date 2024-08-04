@@ -13,9 +13,9 @@ namespace monior {
     , m_memoryView(new QTableView(this))
     , m_netView(new QTableView(this))
     {
-        // this->setWindowTitle("Monior For Linux");
-        // this->setFixedSize(800, 600);
-        qDebug() << "MonitorWindow";
+        this->setWindowTitle("Monior For Linux");
+        this->setFixedSize(800, 600);
+        // qDebug() << "MonitorWindow";
     }
 
     MonitorWindow::~MonitorWindow() {
@@ -36,6 +36,7 @@ namespace monior {
 
     QWidget* MonitorWindow::showAllWidget(const std::string& name) {
         QWidget* widget = new QWidget(this);
+        // QWidget* widget = new QWidget();
 
         // 初始化按钮模块
         m_stacked_meun->addWidget(initCPUMonitorWidget());
@@ -48,7 +49,7 @@ namespace monior {
         layout->addLayout(m_stacked_meun, 2, 0);  // 添加监控模块
         widget->setLayout(layout);  // 设置布局
 
-        qDebug() << "showAllWidget";
+        // qDebug() << "showAllWidget";
         return widget;
     }
 
