@@ -14,7 +14,7 @@ set(SRC_LIST ${SRC_LIST} ${CMAKE_CURRENT_SOURCE_DIR}/src/main_display.cpp)
 
 add_executable(display ${SRC_LIST})
 
-# 设置自动moc 用于qt的信号槽
+# 自动处理Qt的元对象编译器，CMake会自动调用MOC工具来处理包含 Q_OBJECT 宏的头文件
 set_target_properties(display PROPERTIES AUTOMOC TRUE)
 
 # 添加头文件路径
