@@ -32,13 +32,15 @@ namespace monior {
         void clickSoftIrqButtun();  // 点击软中断按钮
 
     private:
-        QStackedLayout* m_stacked_meun;
+        QStackedLayout* m_stacked_meun; // 堆叠布局
 
         QTableView* m_monitorView;  // 监控视图
         QTableView* m_cpuLoadView;  // CPU负载视图
         QTableView* m_cpuStateView; // CPU状态视图
         QTableView* m_memoryView;   // 内存视图
         QTableView* m_netView;      // 网络视图
+
+        QWidget* m_widget;  // 当前显示的widget
     };
 }
 

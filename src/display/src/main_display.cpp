@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
 
     QWidget* widget = monior_window.showAllWidget(name);
 
-    // widget->show();
-    monior_window.show();
+    widget->show();
+    // monior_window.show();
 
     return app.exec();
 }
