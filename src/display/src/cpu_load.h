@@ -5,6 +5,8 @@
 #include <vector>
 
 #include "monitor_inter.h"
+#include "monitor_info.grpc.pb.h"
+#include "monitor_info.pb.h"
 
 namespace monitor {
     class CPULoadModel : public MonitorInterModel {
@@ -24,7 +26,7 @@ namespace monitor {
         void UpdateMonitorInfo(const monitor::proto::MonitorInfo &monitor_info);
 
     private:
-        std::vector<QVariant> insertOneCpuLoad(const monitor::proto::CPULoad &cpu_load);
+        std::vector<QVariant> insertOneCpuLoad(const monitor::proto::CpuLoad &cpu_load);
         
         std::vector<std::vector<QVariant>> m_monitor_data;
         QStringList m_header;

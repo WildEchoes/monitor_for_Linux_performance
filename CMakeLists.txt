@@ -18,9 +18,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 
 # 可视化模块
 add_subdirectory(src/display)
-# rpc通信模块
-add_subdirectory(src/rpc)
 # 序列化模块
-# add_subdirectory(src/proto)
+add_subdirectory(src/proto)
+# rpc通信模块
+# add_subdirectory(src/rpc)
 # 监控工厂模块
 # add_subdirectory(src/monitor)

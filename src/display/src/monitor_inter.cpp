@@ -20,7 +20,7 @@ QVariant monitor::MonitorInterModel::data(const QModelIndex &index, int role) co
         // 文本对齐方式，返回左对齐，垂直居中
         return QVariant(Qt::AlignLeft | Qt::AlignVCenter);
     }
-    else if (role == Qt::TextColorRole)
+    else if (role == Qt::ForegroundRole)
     {
         // 文本颜色，返回黑色
         return QVariant::fromValue(QColor(Qt::black));
