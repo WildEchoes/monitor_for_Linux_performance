@@ -7,17 +7,22 @@
 #include <string>
 #include <memory>
 
+#include "monitor_info.pb.h"
+#include "monitor_info.grpc.pb.h"
+
 namespace monitor {
     class RpcClient {
     public:
         explicit RpcClient(const std::string& serverAddress = "localhost:50051");
         virtual ~RpcClient();
 
-        void sendInfo(const monitor::proto::MonitorInfo& monito_info);
-        void getInfo(monitor::proto::MonitorInfo& monito_info);
+        // 设置监控信息
+        void setInfo(const monitor::proto::MonitorInfo& monito_info);  
+        // 获取监控信息
+        void getInfo(monitor::proto::MonitorInfo* monito_info); 
 
     private:
-        std::unique_ptr<monitor::proto::MonitorService::Stub> m_stub; // 本地代理
+        std::unique_ptr<monitor::proto::GrpcManager::Stub> m_stub; // 本地代理
     };
 }
 
