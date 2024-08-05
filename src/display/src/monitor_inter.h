@@ -4,6 +4,7 @@
 #include <QAbstractTableModel>
 #include <QObject>
 
+/*监控数据的基类*/
 namespace monitor {
     class MonitorInterModel : public QAbstractTableModel {
         Q_OBJECT
