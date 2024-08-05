@@ -24,12 +24,12 @@ set_target_properties(display PROPERTIES AUTOMOC TRUE)
 target_link_libraries(display
     PUBLIC
     # client
-    # monitor_proto
+    monitor_proto
     Qt5::Widgets
     Qt5::Core
 )
 
 # 设置RPATH
-set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
-set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
-set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)  # 安装时使用链接路径
+set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)    # 设置编译时使用安装路径
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")  # 设置安装路径，能在lib够找到依赖库
