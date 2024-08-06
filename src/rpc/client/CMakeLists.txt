@@ -9,5 +9,5 @@ add_library(client STATIC ${SOURCES})
 
 target_link_libraries(client
     PUBLIC
-    monitor_proto
+        monitor_proto
 )

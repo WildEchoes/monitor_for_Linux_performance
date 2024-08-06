@@ -21,6 +21,6 @@ add_subdirectory(src/display)
 # 序列化模块
 add_subdirectory(src/proto)
 # rpc通信模块
-# add_subdirectory(src/rpc)
+add_subdirectory(src/rpc)
 # 监控工厂模块
 # add_subdirectory(src/monitor)
