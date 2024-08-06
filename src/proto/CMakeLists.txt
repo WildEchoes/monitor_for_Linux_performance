@@ -29,6 +29,7 @@ target_include_directories(monitor_proto
 # Compile protobuf and grpc files in mointor proto target to cpp
 #
 protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ${PROTO_FILES})
+# protobuf_generate(TARGET monitor_proto LANGUAGE cpp)
 
 get_target_property(grpc_cpp_plugin_location gRPC::grpc_cpp_plugin LOCATION)
 
