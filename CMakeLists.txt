@@ -23,4 +23,4 @@ add_subdirectory(src/proto)
 # rpc通信模块
 add_subdirectory(src/rpc)
 # 监控工厂模块
-# add_subdirectory(src/monitor)
+add_subdirectory(src/monitor)
