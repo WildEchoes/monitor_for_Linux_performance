@@ -12,6 +12,7 @@ namespace monitor {
             RPCServer();
             virtual ~RPCServer();
 
+            // 重写方法
             // 设置监控信息
             ::grpc::Status SetMonitorInfo(
                 ::grpc::ServerContext* context,
