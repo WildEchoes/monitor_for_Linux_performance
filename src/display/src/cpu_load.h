@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "monitor_inter.h"
+
 #include "monitor_info.grpc.pb.h"
 #include "monitor_info.pb.h"
 
@@ -20,10 +21,10 @@ namespace monitor {
         // 根据不同的角色返回相应的表头显示属性，如字体和背景颜色
         QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
 
-        int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-        int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+        int rowCount(const QModelIndex &parent = QModelIndex()) const override;  // 返回行数
+        int columnCount(const QModelIndex &parent = QModelIndex()) const override; // 返回列数
 
-        void UpdateMonitorInfo(const monitor::proto::MonitorInfo &monitor_info);
+        void UpdateMonitorInfo(const monitor::proto::MonitorInfo &monitor_info);  // 更新监控信息
 
     private:
         std::vector<QVariant> insertOneCpuLoad(const monitor::proto::CpuLoad &cpu_load);

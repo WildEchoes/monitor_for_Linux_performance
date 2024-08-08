@@ -3,7 +3,7 @@
 monitor::CPULoadModel::CPULoadModel(QObject *parent)
     : MonitorInterModel(parent)
 {
-    m_header << tr("CPU Load 1");
+    m_header << tr("CPU Load 1");  // 翻译
     m_header << tr("CPU Load 3");
     m_header << tr("CPU Load 15");
 }
@@ -52,13 +52,15 @@ int monitor::CPULoadModel::columnCount(const QModelIndex &parent) const
 
 void monitor::CPULoadModel::UpdateMonitorInfo(const monitor::proto::MonitorInfo &monitor_info)
 {
-    beginResetModel();
-    m_monitor_data.clear();
-    m_monitor_data.push_back(insertOneCpuLoad(monitor_info.cpu_load()));
+    beginResetModel(); // 数据源被完全替换或重新加载
+
+    m_monitor_data.clear();  // 清空上一次的数据
+    m_monitor_data.push_back(insertOneCpuLoad(monitor_info.cpu_load()));  // 插入新的数据
+
     endResetModel();
 }
 
-std::vector<QVariant> monitor::CPULoadModel::insertOneCpuLoad(const monitor::proto::CPULoad &cpu_load)
+std::vector<QVariant> monitor::CPULoadModel::insertOneCpuLoad(const monitor::proto::CpuLoad &cpu_load)
 {
     std::vector<QVariant> cpu_load_data;
     for (size_t i = CPULoad::CPU_AVG_1; i < CPULoad::COLUMN_MAX; ++i)
@@ -78,4 +80,5 @@ std::vector<QVariant> monitor::CPULoadModel::insertOneCpuLoad(const monitor::pro
             break;
         }
     }
+    return cpu_load_data;
 }
