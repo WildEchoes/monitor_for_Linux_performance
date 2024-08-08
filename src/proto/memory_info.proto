@@ -5,8 +5,8 @@ message MemoryInfo {
     float total = 1;           // Total memory 
     float free = 2;            // Free memory 
     float avail= 3;            // Available memory 
-    float buffers = 4;         // Buffers memory 缓冲区内存
-    float cached = 5;          // Cached memory 缓存内存
+    float buffers = 4;         // Buffers memory 块设备所占用的缓存页
+    float cached = 5;          // Cached memory 普通文件缓存内存
     float swap_cached = 6;     // Swap cached memory  交换缓存内存
     float active = 7;          // Active memory  活跃的内存
     float inactive = 8;        // Inactive memory 不活跃的内存
@@ -14,10 +14,10 @@ message MemoryInfo {
     float inactive_anon = 10;  // Inactive anonymous memory  不活跃的匿名内存
     float active_file = 11;    // Active file memory 活跃文件内存
     float inactive_file = 12;  // Inactive file memory  不活跃文件内存
-    float dirty = 13;          // Dirty memory  脏内存
+    float dirty = 13;          // Dirty memory  需要写入磁盘缓存数据
     float writeback = 14;      // Writeback memory 写回磁盘的内存量
-    float anon_pages = 15;     // Anonymous pages 匿名页
-    float mapped = 16;         // Mapped memory 映射到用户空间的内存量
+    float anon_pages = 15;     // Anonymous pages 未映射页的内存的大小
+    float mapped = 16;         // Mapped memory 映射到用户空间的内存量（设备和文件等映射的大小）
     float kReclaimable = 17;   // Kernal reclaimable memory 可回收的内核内存量
     float sReclaimable = 18;   // Slab reclaimable memory 可回收的slab内存量
     float sUnreclaim = 19;     // Slab unreclaimable memory 不可回收的slab内存量
