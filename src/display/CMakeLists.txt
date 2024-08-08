@@ -10,7 +10,7 @@ find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC_LIST)
 
 # 添加主文件
-set(SRC_LIST ${SRC_LIST} ${CMAKE_CURRENT_SOURCE_DIR}/src/main_display.cpp)
+# set(SRC_LIST ${SRC_LIST} ${CMAKE_CURRENT_SOURCE_DIR}/src/main_display.cpp)
 
 add_executable(display ${SRC_LIST})
 
