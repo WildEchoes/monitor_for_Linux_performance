@@ -22,7 +22,7 @@ namespace monitor {
         m_load_avg_3 = std::stof(load_list[1]);
         m_load_avg_15 = std::stof(load_list[2]);
         
-        // 写入读取到的cpu load 数据
+        // 写入读取到的cpu load 数据  mutable是单个变量
         auto message = monitorInfo->mutable_cpu_load();
 
         message->set_load_avg_1(m_load_avg_1);

@@ -1,3 +1,4 @@
+# project(monitor_manager)
 find_package(Boost REQUIRED COMPONENTS system chrono)
 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC_LIST)

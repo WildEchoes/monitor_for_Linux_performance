@@ -25,6 +25,7 @@ namespace monitor {
             std::string name = cpu_softirq_lists[0][i];
             SoftIrq softIrq;
             softIrq.cpu_name = name;
+            //  表头站一个位置
             softIrq.hi = std::stoll(cpu_softirq_lists[1][i+1]);
             softIrq.timer = std::stoll(cpu_softirq_lists[2][i+1]);
             softIrq.net_tx = std::stoll(cpu_softirq_lists[3][i+1]);
