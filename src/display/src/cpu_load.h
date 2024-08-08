@@ -16,9 +16,9 @@ namespace monitor {
         explicit CPULoadModel(QObject *parent = nullptr);
         virtual ~CPULoadModel();
 
-        // 根据不同的角色返回相应的数据显示属性，如对齐方式、文本颜色和背景颜色
+        // 获取表中数据
         QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-        // 根据不同的角色返回相应的表头显示属性，如字体和背景颜色
+        // 获取表头数据
         QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
 
         int rowCount(const QModelIndex &parent = QModelIndex()) const override;  // 返回行数
@@ -29,8 +29,8 @@ namespace monitor {
     private:
         std::vector<QVariant> insertOneCpuLoad(const monitor::proto::CpuLoad &cpu_load);
         
-        std::vector<std::vector<QVariant>> m_monitor_data;
-        QStringList m_header;
+        std::vector<std::vector<QVariant>> m_monitor_data; // 监控数据
+        QStringList m_header; // 表头
 
         enum CPULoad{
             CPU_AVG_1 = 0,
