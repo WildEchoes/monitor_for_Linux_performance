@@ -5,6 +5,7 @@
 
 void initServer(const grpc::string& server_and_port = "0.0.0.0:50051")
 {
+    // 监听所有ipv4地址的50051端口
     grpc::ServerBuilder builder;  // 创建服务器构建器
     // 添加监听地址
     builder.AddListeningPort(server_and_port, grpc::InsecureServerCredentials());
