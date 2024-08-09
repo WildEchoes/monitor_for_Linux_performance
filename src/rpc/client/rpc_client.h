@@ -16,9 +16,9 @@ namespace monitor {
         explicit RpcClient(const std::string& serverAddress = "localhost:50051");
         virtual ~RpcClient();
 
-        // 设置监控信息
+        // 发送监控信息到服务端
         void setInfo(const monitor::proto::MonitorInfo& monito_info);  
-        // 获取监控信息
+        // 从服务端获取监控信息
         void getInfo(monitor::proto::MonitorInfo* monito_info); 
 
     private:

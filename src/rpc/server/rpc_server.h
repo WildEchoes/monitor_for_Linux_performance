@@ -12,15 +12,14 @@ namespace monitor {
             RPCServer();
             virtual ~RPCServer();
 
-            // 重写方法
-            // 设置监控信息
+            // 接收并存储监控信息
             ::grpc::Status SetMonitorInfo(
                 ::grpc::ServerContext* context,
                 const ::monitor::proto::MonitorInfo* request,
                 ::google::protobuf::Empty* response
             ) override;
 
-            // 获取监控信息
+            // 发送监控信息
             ::grpc::Status GetMonitorInfo(
                 ::grpc::ServerContext* context,
                 const ::google::protobuf::Empty* request,
