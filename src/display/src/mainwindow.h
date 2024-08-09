@@ -8,8 +8,14 @@
 #include <string>
 #include <thread>
 
+#include "cpu_stat.h"
+#include "cpu_load.h"
+#include "cpu_softirq.h"
+#include "memory_stat.h"
+#include "net_stat.h"
 
-namespace monior {
+
+namespace monitor {
     class MonitorWindow : public QWidget {
         Q_OBJECT
     public:
@@ -23,7 +29,7 @@ namespace monior {
         QWidget* initSoftIrqMonitorWidget();  // 初始化软中断监控模块
         QWidget* initButtunWidget(const std::string& name);  // 初始化按钮模块
 
-        //void updateData();  // 更新数据
+        void updateData(const monitor::proto::MonitorInfo &moniorInfo);  // 更新数据
 
     private slots:
         void clickCPUButtun();  // 点击CPU按钮
@@ -37,8 +43,15 @@ namespace monior {
         QTableView* m_monitorView;  // 监控视图
         QTableView* m_cpuLoadView;  // CPU负载视图
         QTableView* m_cpuStateView; // CPU状态视图
+        QTableView* m_cpuSoftirqView;  // CPU软中断视图
         QTableView* m_memoryView;   // 内存视图
         QTableView* m_netView;      // 网络视图
+
+        CPULoadModel* m_cpu_load_model;  // CPU负载数据模型
+        CPUStatModel* m_cpu_stat_model;  // CPU状态数据模型
+        CPUSoftIrqModel* m_cpu_softirq_model;  // CPU软中断数据模型
+        MemoryModel* m_memory_stat_model;  // 内存数据模型
+        NetModel* m_net_stat_model;  // 网络数据模型
 
         QWidget* m_widget;  // 当前显示的widget
     };

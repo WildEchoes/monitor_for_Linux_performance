@@ -34,6 +34,7 @@ namespace monitor {
         {
             return QVariant();
         }
+        return QVariant();
     }
 
     QVariant CPUSoftIrqModel::headerData(int section, Qt::Orientation orientation, int role) const

@@ -30,6 +30,8 @@ namespace monitor
         {
             return QVariant();
         }
+        
+        return QVariant();
     }
 
     QVariant NetModel::headerData(int section, Qt::Orientation orientation, int role) const

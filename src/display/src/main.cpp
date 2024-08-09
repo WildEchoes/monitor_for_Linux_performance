@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
     std::string name{"Display1"};
 
-    monior::MonitorWindow monior_window;
+    monitor::MonitorWindow monior_window{};
 
     QWidget* widget = monior_window.showAllWidget(name);
 

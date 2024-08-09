@@ -33,6 +33,8 @@ namespace monitor
         {
             return QVariant();
         }
+
+        return QVariant();
     }
 
     QVariant CPUStatModel::headerData(int section, Qt::Orientation orientation, int role) const

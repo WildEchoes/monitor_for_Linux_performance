@@ -41,6 +41,8 @@ namespace monitor {
         {
             return QVariant();
         }
+        
+        return QVariant();
     }
 
     QVariant MemoryModel::headerData(int section, Qt::Orientation orientation, int role) const
