@@ -37,7 +37,7 @@ int main(){
                         member->updateOnce(&info);
                     }
                     client.setInfo(info);
-                    std::this_thread::sleep_for(std::chrono::seconds(3));
+                    std::this_thread::sleep_for(std::chrono::seconds(2));
                 }
             }
         )
