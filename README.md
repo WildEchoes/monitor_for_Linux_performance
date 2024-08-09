@@ -1,6 +1,11 @@
 # <center> monitor_for_Linux_performance
 A project for monitoring system performance across distributed systems, exclusively designed for Linux environments.
 
+## Clone
+```bash
+git clone https://github.com/WildEchoes/monitor_for_Linux_performance.git
+```
+
 ## Usage
 1. Create Environment
 
